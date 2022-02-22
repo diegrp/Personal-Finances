@@ -58,6 +58,14 @@ const App = () => {
 
   },[filteredList]);
 
+  // Adicionar novo item na lista
+
+  const handleAddList = ( item: Item ) => {
+    let newItem = [ ...list ];
+    newItem.push(item);
+    setList(newItem);
+  }
+
   return(
     <C.Container>
       <C.Header>
