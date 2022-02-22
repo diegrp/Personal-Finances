@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Item } from "./types/Item";
 import { items } from "./data/items";
 import { filterListByMonth, getCurrentMonth } from "./helpers/dateFilter";
+import { TableArea } from "./Components/TableArea";
 import * as C from "./App.styles";
 
 const App = () => {
@@ -22,7 +23,14 @@ const App = () => {
         <C.HeaderText>Finanças Pessoais</C.HeaderText>
       </C.Header>
       <C.Body>
-        
+
+        {/* Tabela que compreende nossos itens */}
+
+        <TableArea 
+          list={filteredList}
+          handleDeleteItem={handleDeleteItem} 
+        />
+
       </C.Body>
     </C.Container>
   )
