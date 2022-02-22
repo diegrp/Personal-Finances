@@ -87,6 +87,7 @@ const App = () => {
 
         <InputArea
           onAdd={handleAddList}
+          onChangeMonth={onChangeMonth}
         />
 
         {/* Tabela que compreende nossos itens */}

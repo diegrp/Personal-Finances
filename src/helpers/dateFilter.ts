@@ -28,7 +28,7 @@ export const filterListByMonth = ( list: Item[], date: string ): Item[] => {
 // Formatação de data
 
 export const formatDate = ( date: Date ) => {
-  let day = date.getDate();
+  let day = date.getDate() + 1;
   let month = date.getMonth() + 1;
   let year = date.getFullYear();
 

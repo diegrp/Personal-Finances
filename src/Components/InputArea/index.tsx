@@ -5,11 +5,12 @@ import * as C from "./styles";
 
 type Props = {
   onAdd: ( item: Item ) => void
+  onChangeMonth: ( newMonth: string ) => void
 }
 
 // Área de registro para novos itens em nossa lista
 
-export const InputArea = ( { onAdd }: Props ) => {
+export const InputArea = ( { onAdd, onChangeMonth }: Props ) => {
 
   const [ dateField, setDateField ] = useState('');
   const [ categoryField, setCategoryField ] = useState('');
@@ -48,6 +49,7 @@ export const InputArea = ( { onAdd }: Props ) => {
         title: titleField,
         value: valueField
       });
+      onChangeMonth(dateField);
       clearField();
     }
   }
