@@ -5,6 +5,7 @@ import { categories } from "./data/categories";
 import { filterListByMonth, getCurrentMonth } from "./helpers/dateFilter";
 import { TableArea } from "./Components/TableArea";
 import { InfoArea } from "./Components/InfoArea";
+import { InputArea } from "./Components/InputArea";
 import * as C from "./App.styles";
 
 const App = () => {
@@ -80,6 +81,12 @@ const App = () => {
           onChangeMonth={onChangeMonth}
           income={income}
           expense={expense}
+        />
+
+        {/* Área de registro para novos itens */}
+
+        <InputArea
+          onAdd={handleAddList}
         />
 
         {/* Tabela que compreende nossos itens */}
