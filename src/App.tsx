@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Item } from "./types/Item";
 import { items } from "./data/items";
+import { categories } from "./data/categories";
 import { filterListByMonth, getCurrentMonth } from "./helpers/dateFilter";
 import { TableArea } from "./Components/TableArea";
 import { InfoArea } from "./Components/InfoArea";
@@ -36,6 +37,26 @@ const App = () => {
   const onChangeMonth = ( newMonth: string ) => {
     setCurrentMonth(newMonth);
   }
+
+  // Incremento nos estados income e expense pela categoria do item
+
+  useEffect(() => {
+
+    let countIncome = 0;
+    let countExpense = 0;
+
+    for(let i in filteredList){
+      if(categories[filteredList[i].category].expense){
+        countExpense += filteredList[i].value
+      }else{
+        countIncome += filteredList[i].value
+      }
+    }
+
+    setIncome(countIncome);
+    setExpense(countExpense);
+
+  },[filteredList]);
 
   return(
     <C.Container>
