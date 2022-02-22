@@ -10,6 +10,9 @@ type Props = {
 
 export const ResumeItem = ( { title, value, color }: Props ) => {
   return(
-    <div></div>
+    <C.Container>
+      <C.Title>{title}</C.Title>
+      <C.Info color={color}>{formatBalance(value)}</C.Info>
+    </C.Container>
   )
 }
