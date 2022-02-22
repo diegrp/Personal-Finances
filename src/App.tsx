@@ -16,8 +16,16 @@ const App = () => {
   },[list, currentMonth]);
 
   return(
-    <div></div>
+    <C.Container>
+      <C.Header>
+        <C.HeaderText>Finanças Pessoais</C.HeaderText>
+      </C.Header>
+      <C.Body>
+        
+      </C.Body>
+    </C.Container>
   )
+  
 }
 
 export default App;
