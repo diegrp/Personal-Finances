@@ -1,5 +1,6 @@
 import { Item } from "../../types/Item";
 import { TableItem } from "../TableItem";
+import * as C from "./styles";
 
 export type Props = {
   list: Item[]
