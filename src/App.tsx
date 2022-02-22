@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Item } from "./types/Item";
 import { items } from "./data/items";
 import { filterListByMonth, getCurrentMonth } from "./helpers/dateFilter";
+import * as C from "./App.styles";
 
 const App = () => {
 
@@ -25,7 +26,7 @@ const App = () => {
       </C.Body>
     </C.Container>
   )
-  
+
 }
 
 export default App;
