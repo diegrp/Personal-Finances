@@ -28,6 +28,12 @@ const App = () => {
     );
   }
 
+  // Alteração do mês para filtrar a listagem de itens 
+
+  const onChangeMonth = ( newMonth: string ) => {
+    setCurrentMonth(newMonth);
+  }
+
   return(
     <C.Container>
       <C.Header>
