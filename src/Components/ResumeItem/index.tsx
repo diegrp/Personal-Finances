@@ -1,4 +1,5 @@
 import { formatBalance } from "../../helpers/dateFilter";
+import * as C from "./styles";
 
 type Props = {
   title: string
