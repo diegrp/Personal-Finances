@@ -17,6 +17,17 @@ const App = () => {
     setFilteredList(filterListByMonth(list, currentMonth));
   },[list, currentMonth]);
 
+  // Remove item na lista comúm e filtrada
+
+  const handleDeleteItem = ( title: string ) => {
+    setList(
+      list.filter((item) => item.title !== title)
+    );
+    setFilteredList(
+      filteredList.filter((item) => item.title !== title)
+    );
+  }
+
   return(
     <C.Container>
       <C.Header>
