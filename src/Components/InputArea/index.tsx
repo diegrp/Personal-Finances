@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { categories } from "../../data/categories";
-import { Item } from "../../types/Item"
+import { Item } from "../../types/Item";
+import * as C from "./styles";
 
 type Props = {
   onAdd: ( item: Item ) => void
