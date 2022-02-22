@@ -61,7 +61,40 @@ export const InputArea = ( { onAdd }: Props ) => {
   }
 
   return(
-    <div></div>
+    <C.Container>
+      <C.InputLabel>
+        <C.InputText>
+          <C.Input type="date" value={dateField} onChange={({target}) => setDateField(target.value)} />
+        </C.InputText>
+      </C.InputLabel>
+      <C.InputLabel>
+        <C.InputText>
+          <C.Select value={categoryField} onChange={({target}) => setCategoryField(target.value)}>
+            <option hidden>Selecione</option>
+            {categoryKeys.map((key, index) => (
+              <option key={index} value={key}>{categories[key].title}</option>
+            ))}
+          </C.Select>
+        </C.InputText>
+      </C.InputLabel>
+      <C.InputLabel>
+        <C.InputText>
+          <C.Input type="text" value={titleField} onChange={({target}) => setTitleField(target.value)} />
+        </C.InputText>
+      </C.InputLabel>
+      <C.InputLabel>
+        <C.InputText>
+          <C.Input type="number" value={valueField} onChange={({target}) => setValueField(parseFloat(target.value))} />
+        </C.InputText>
+      </C.InputLabel>
+      <C.InputLabel>
+        <C.InputText>
+          <C.Button onClick={handleAddEvent}>
+            Adicionar
+          </C.Button>
+        </C.InputText>
+      </C.InputLabel>
+    </C.Container>
   )
 
 }
