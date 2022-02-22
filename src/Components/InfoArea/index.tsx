@@ -1,3 +1,6 @@
+import { formatCurrentMonth } from "../../helpers/dateFilter";
+import { ResumeItem } from "../ResumeItem";
+
 type Props = {
   currentMonth: string
   onChangeMonth: ( newMonth: string ) => void
@@ -8,6 +11,24 @@ type Props = {
 // Area de informações 
 
 export const InfoArea = ( { currentMonth, onChangeMonth, income, expense }: Props ) => {
+
+  // Função para avançar o mês em nossa filtragem
+
+  const handlePrevMonth = () => {
+    let [ year, month ] = currentMonth.split('-');
+    let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
+    currentDate.setMonth( currentDate.getMonth() - 1 );
+    onChangeMonth(`${currentDate.getFullYear()} - ${currentDate.getMonth() + 1}`);
+  }
+
+  // Função para avançar o mês em nossa filtragem
+
+  const handleNextMonth = () => {
+    let [ year, month ] = currentMonth.split('-');
+    let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
+    currentDate.setMonth( currentDate.getMonth() + 1 );
+    onChangeMonth(`${currentDate.getFullYear()} - ${currentDate.getMonth() + 1}`);
+  }
 
   return(
     <C.Container>

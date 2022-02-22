@@ -38,3 +38,12 @@ export const formatDate = ( date: Date ) => {
 // Acrescenta 0 antes do número do dia e mês
 
 const addZeroToDate = ( n: number ): string => n < 10 ? `0${n}`:`${n}`; 
+
+// Formatação do mês
+
+export const formatCurrentMonth = ( currentMonth: string ): string => {
+  let [ year, month ] = currentMonth.split('-');
+
+  const months = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  return `${months[parseInt(month) - 1]} de ${year}`;
+}
