@@ -1,3 +1,5 @@
+import { useState } from "react"
+import { categories } from "../../data/categories";
 import { Item } from "../../types/Item"
 
 type Props = {
@@ -8,8 +10,58 @@ type Props = {
 
 export const InputArea = ( { onAdd }: Props ) => {
 
+  const [ dateField, setDateField ] = useState('');
+  const [ categoryField, setCategoryField ] = useState('');
+  const [ titleField, setTitleField ] = useState('');
+  const [ valueField, setValueField ] = useState(0);
+
+  // Pega as chaves do objeto de categorias
+
+  const categoryKeys: string[] = Object.keys(categories);
+
+  // Função que formaliza e verifica os erros para adicionar os itens na lista
+
+  const handleAddEvent = () => {
+    
+    let errors: string[] = [];
+
+    if(isNaN(new Date(dateField).getTime())){
+      errors.push('Data Inválida');
+    }
+    if(!categoryKeys.includes(categoryField)){
+      errors.push('Categoria Inválida');
+    }
+    if(titleField === ''){
+      errors.push('Título Vázio');
+    }
+    if(valueField <= 0){
+      errors.push('Valor Inválido');
+    }
+
+    if(errors.length > 0){
+      alert(errors.join('\n'));
+    }else{
+      onAdd({
+        date: new Date(dateField),
+        category: categoryField,
+        title: titleField,
+        value: valueField
+      });
+      clearField();
+    }
+  }
+
+  // Limpa os estados se não tiver nenhum erro, após adicionar na lista
+
+  const clearField = () => {
+    setDateField('');
+    setCategoryField('');
+    setTitleField('');
+    setValueField(0);
+  }
+
   return(
     <div></div>
   )
-  
+
 }
