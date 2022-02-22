@@ -24,3 +24,17 @@ export const filterListByMonth = ( list: Item[], date: string ): Item[] => {
   return newList;
 
 }
+
+// Formatação de data
+
+export const formatDate = ( date: Date ) => {
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
+  return `${addZeroToDate(day)}/${addZeroToDate(month)}/${year}`;
+}
+
+// Acrescenta 0 antes do número do dia e mês
+
+const addZeroToDate = ( n: number ): string => n < 10 ? `0${n}`:`${n}`; 
