@@ -47,3 +47,7 @@ export const formatCurrentMonth = ( currentMonth: string ): string => {
   const months = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
   return `${months[parseInt(month) - 1]} de ${year}`;
 }
+
+// Formatação do balanço de nossas receitas e despesas
+
+export const formatBalance = ( value: number ) =>  value < 0 ? `- R$ ${Math.abs(value)}`:`R$ ${value}`;

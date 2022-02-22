@@ -1,3 +1,5 @@
+import { formatBalance } from "../../helpers/dateFilter";
+
 type Props = {
   title: string
   value: number
